@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Generated database (it is re-created automatically on first run)
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.log
