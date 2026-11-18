@@ -1,119 +1,163 @@
 # Society Maintenance Management System
 
-A console-based **Python 3 + SQLite3** project for managing a residential society: flats, residents,
-monthly maintenance bills, payments (including partial payments), society expenses, complaints and
-financial reports.
+A console-based **Python 3 + SQLite3** project for managing a residential society. It provides facilities to manage flats, residents, monthly maintenance bills, payments (including partial payments), society expenses, complaints, and financial reports.
 
 Developed as a Python and SQL practical assignment for **Anudip Foundation**.
 
 ## Features
 
-- **Dashboard** - flats, residents, bills, collection, pending dues, expenses and complaint counts
-- **Flat Management** - add, view, search, update, delete flats; list residents of a flat
-- **Resident Management** - register, view, search (ID / name / flat), update, delete; SQL JOIN view
-- **Maintenance Management** - generate monthly bills for all flats, duplicate-bill prevention,
-  search, update amount, safe delete, PAID / PARTIALLY PAID / UNPAID filter
-- **Payment Management** - partial payments, overpayment blocked, payment history and search,
-  automatic payment status
-- **Expense Management** - categorised expenses (Electricity, Water, Cleaning, Security, Repairs ...)
-- **Complaint Management** - Pending / In Progress / Resolved workflow
-- **Reports and Analytics** - monthly and annual collection, pending dues, flat-wise report,
-  expense reports, income versus expenses, outstanding summary
-- Optional **sample data** (fictional Indian data) that is asked before it is inserted
+- **Dashboard** – Flats, residents, bills, collections, pending dues, expenses, and complaint counts.
+- **Flat Management** – Add, view, search, update, and delete flats.
+- **Resident Management** – Register, view, search, update, and delete residents.
+- **Maintenance Management** – Generate monthly bills, prevent duplicate bills, and track payment status.
+- **Payment Management** – Accept partial payments, prevent overpayments, and maintain payment history.
+- **Expense Management** – Record and manage categorized society expenses.
+- **Complaint Management** – Track complaints through Pending, In Progress, and Resolved statuses.
+- **Reports and Analytics** – Monthly and annual collections, pending dues, expenses, and financial summaries.
+- **Sample Data** – Optional fictional Indian sample records.
 
 ## Technology Stack
 
-| Item | Details |
-|------|---------|
-| Language | Python 3 |
-| Database | SQLite3 (built into Python) |
-| Interface | Command line / console |
-| Extra packages | None |
+| Technology | Details |
+|---|---|
+| Programming Language | Python 3 |
+| Database | SQLite3 |
+| Interface | Command Line / Console |
+| Extra Packages | None |
 
 ## Installation
 
-1. Install Python 3.8 or newer from <https://www.python.org/downloads/>.
-2. Download or clone this repository:
+1. Install Python 3.8 or newer from [Python's official website](https://www.python.org/downloads/).
+2. Clone this repository:
+
+   ```bash
+   git clone https://github.com/sumit3032006/Society-Maintenance-Management-System.git
    ```
-   git clone https://github.com/<your-username>/Society_Maintenance_Project.git
-   cd Society_Maintenance_Project
+
+3. Open the project folder:
+
+   ```bash
+   cd Society-Maintenance-Management-System
    ```
-3. No `pip install` is needed (see `requirements.txt`).
+
+4. No additional package installation is required.
 
 ## How to Run
 
-```
+Execute the following command:
+
+```bash
 python society_management.py
 ```
-(On some systems use `python3 society_management.py`.)
+
+On some systems, use:
+
+```bash
+python3 society_management.py
+```
 
 ## Database Initialization
 
-- The file `society_management.db` is **created automatically** next to the script on first run.
-- All six tables (`flats`, `residents`, `maintenance`, `payments`, `expenses`, `complaints`) are created
-  with PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL and CHECK constraints.
-- Foreign keys are switched on for every connection (`PRAGMA foreign_keys = ON`).
-- If the database is empty, the program asks whether to load sample data. You can also choose
-  **Dashboard -> Load optional sample data**. Sample data is only loaded into an empty database,
-  so it is never duplicated.
-- To start again from scratch, delete `society_management.db` and run the program again.
+- The `society_management.db` database is created automatically when the application runs for the first time.
+- Six tables are created: `flats`, `residents`, `maintenance`, `payments`, `expenses`, and `complaints`.
+- Primary keys, foreign keys, UNIQUE, NOT NULL, and CHECK constraints are used.
+- Foreign key enforcement is enabled for database connections.
+- If the database is empty, the application asks whether to insert optional sample data.
+- Sample data can also be loaded through the Dashboard.
+- To reset the application, delete `society_management.db` and run the program again.
 
 ## Sample Usage
 
-1. Run the program and answer `y` to load sample data.
-2. Choose `1` Dashboard -> `1` to see the summary.
-3. Choose `4` Maintenance -> `1` to generate bills for a new month (running it twice shows duplicate protection).
-4. Choose `5` Payment -> `1`, enter flat `B-202`, pick a bill, and pay part of the amount.
-5. Choose `8` Reports -> any option to view the analytics.
+1. Run the application.
+2. Enter `y` when asked whether to insert sample data.
+3. Select **1 – Dashboard** to view the society summary.
+4. Select **4 – Maintenance Management** to generate monthly bills.
+5. Select **5 – Payment Management** to record full or partial payments.
+6. Select **8 – Reports and Analytics** to view financial reports.
 
-## Screenshots
+## Application Screenshots
 
-Screenshots are stored in the `screenshots/` folder:
+The following screenshots demonstrate the main modules and functionality of the application.
 
-| Screen | File |
-|--------|------|
-| Main menu | `screenshots/01_main_menu.png` |
-| Dashboard | `screenshots/02_dashboard.png` |
-| Flat management | `screenshots/03_flat_management.png` |
-| Resident management | `screenshots/04_resident_management.png` |
-| Maintenance management | `screenshots/05_maintenance_management.png` |
-| Payment management | `screenshots/06_payment_management.png` |
-| Expense management | `screenshots/07_expense_management.png` |
-| Complaint management | `screenshots/08_complaint_management.png` |
-| Reports | `screenshots/09_reports.png` |
+## Application Screenshots
 
-> The images currently supplied are placeholders. Replace them with your own screenshots
-> (see `screenshots/HOW_TO_REPLACE_SCREENSHOTS.txt`).
+### 1. Main Menu
+![Main Menu](screenshots/01_main_menu.png)
+
+### 2. Dashboard
+![Dashboard](screenshots/02_dashboard.png)
+
+### 3. Flat Management
+![Flat Management](screenshots/03_flat_management.png)
+
+### 4. Resident Management
+![Resident Management](screenshots/04_resident_management.png)
+
+### 5. Maintenance Management
+![Maintenance Management](screenshots/05_maintenance_management.png)
+
+### 6. Payment Management
+![Payment Management](screenshots/06_payment_management.png)
+
+### 7. Expense Management
+![Expense Management](screenshots/07_expense_management.png)
+
+### 8. Complaint Management
+![Complaint Management](screenshots/08_complaint_management.png)
+
+### 9. Reports and Analytics
+![Reports and Analytics](screenshots/09_reports.png)
 
 ## SQL Concepts Demonstrated
 
-- `CREATE TABLE`, `PRIMARY KEY AUTOINCREMENT`, `FOREIGN KEY ... ON DELETE RESTRICT`
-- `NOT NULL`, `UNIQUE`, composite `UNIQUE (flat_id, month, year)`, `CHECK`, `DEFAULT`
-- `INSERT`, `SELECT`, `UPDATE`, `DELETE` (CRUD) with **parameterized queries**
-- `INNER JOIN`, `LEFT JOIN`, and joins across three tables
-- Aggregates: `SUM()`, `COUNT()`, `AVG()`; `GROUP BY`, `ORDER BY`, `WHERE`, `LIKE`
-- `CASE` expressions (automatic payment status), `COALESCE`, subqueries, `strftime()`
-- Transactions: commit on success, rollback on error
+- `CREATE TABLE`, `PRIMARY KEY`, `AUTOINCREMENT`
+- `FOREIGN KEY`, `ON DELETE RESTRICT`
+- `NOT NULL`, `UNIQUE`, `CHECK`, and `DEFAULT`
+- `INSERT`, `SELECT`, `UPDATE`, and `DELETE` (CRUD operations)
+- Parameterized SQL queries
+- `INNER JOIN` and `LEFT JOIN`
+- Aggregate functions: `SUM()`, `COUNT()`, and `AVG()`
+- `GROUP BY`, `ORDER BY`, `WHERE`, and `LIKE`
+- `CASE` expressions and `COALESCE`
+- Subqueries and `strftime()`
+- Database transactions using `COMMIT` and `ROLLBACK`
 
 ## Project Structure
 
-```
-Society_Maintenance_Project/
-├── society_management.py      # complete application (single file)
+```text
+Society-Maintenance-Management-System/
+│
+├── society_management.py
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
+│
 ├── documentation/
-│   └── Society_Maintenance_Synopsis.docx
+│   └── Society_Maintenance_Synopsis.pdf
+│
 └── screenshots/
+    ├── 01_main_menu.png
+    ├── 02_dashboard.png
+    ├── 03_flat_management.png
+    ├── 04_resident_management.png
+    ├── 05_maintenance_management.png
+    ├── 06_payment_management.png
+    ├── 07_expense_management.png
+    ├── 08_complaint_management.png
+    └── 09_reports.png
 ```
 
 ## Author and Course
 
-- **Student Name:** [Your Name]
-- **Course:** [Course Name]
+- **Student Name:** Sumit Ravindra Jadhav
+- **Course:** Python and SQL Practical Project
 - **Training Institute:** Anudip Foundation
-- **Trainer / Submitted To:** [Trainer Name]
-- **Batch / Centre:** [Batch or Centre Name]
+- **Project Title:** Society Maintenance Management System
 
-All names, phone numbers and e-mail addresses in the sample data are fictional.
+## Important Note
+
+All names, phone numbers, email addresses, and other personal details used in the sample data are fictional.
+
+---
+
+**Developed using Python 3 and SQLite3.**
