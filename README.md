@@ -151,7 +151,6 @@ Society-Maintenance-Management-System/
 
 - **Student Name:** Sumit Ravindra Jadhav
 - **Course:** Python and SQL Practical Project
-- **Training Institute:** Anudip Foundation
 - **Project Title:** Society Maintenance Management System
 
 ## Important Note
